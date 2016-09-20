@@ -1,0 +1,12 @@
+package Obstaculo;
+
+import general.Celda;
+
+public class Agua extends Celda {
+	private static final String ruta="Agua.png";
+	
+	public Agua(int x,int y){
+		super(x,y,ruta);
+	}
+	
+}

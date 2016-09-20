@@ -1,0 +1,32 @@
+package Tanque;
+import general.*;
+import Proyectil.Proyectil;
+
+public class Rapido extends Enemigo {
+	
+	protected final String  ruta="E_Rapido.png";
+	
+	public Rapido(Celda u)
+	{
+		 recompensa=200;
+		 velocidadMov=3;
+		 velocidadDisp=2;
+		 ubicacion=u;
+		 aguante=1;
+		
+	}
+	
+	public Proyectil disparar() {
+		return null;
+	}
+	
+	public Celda getUbicacion() {
+		return ubicacion;
+	}
+	
+	public void setGrafico() {
+		ubicacion.setPath(ruta);
+	}
+
+
+}

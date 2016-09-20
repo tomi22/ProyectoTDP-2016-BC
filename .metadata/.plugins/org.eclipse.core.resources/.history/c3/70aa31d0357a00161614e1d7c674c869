@@ -1,0 +1,31 @@
+package Tanque;
+import general.*;
+import Proyectil.Proyectil;
+
+public class Blindado extends Enemigo{
+	//private int contador;
+	protected final String ruta="E_Blindado.png";
+	
+	public Blindado(int x,int y){
+		 super(x,y);
+		 recompensa=400;
+		 velocidadMov=1;
+		 velocidadDisp=2;
+		 aguante=4;
+		// contador=0;
+		 direccion=2;
+	}
+	
+	public Proyectil disparar() {
+		return null;
+	}
+
+	public Celda getUbicacion() {
+		return ubicacion;
+	}
+
+	public void setGrafico() {
+		ubicacion.setPath(ruta);
+	}
+
+}

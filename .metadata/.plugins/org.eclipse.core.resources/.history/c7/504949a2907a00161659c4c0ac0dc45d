@@ -1,0 +1,20 @@
+package Tanque;
+
+import Proyectil.Proyectil;
+
+public abstract class Enemigo extends Tanque{
+
+	public Enemigo(int x, int y) {
+		super(x, y);
+	}
+	protected int recompensa;
+
+	public int getRecompensa(){
+		return recompensa;
+	}
+	
+	public abstract Proyectil disparar();
+
+	//public abstract  void moverse(int n);
+
+}

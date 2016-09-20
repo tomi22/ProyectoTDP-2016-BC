@@ -1,0 +1,29 @@
+package general;
+
+public  class Celda {
+
+	protected double x;
+	protected double y;
+	
+	public Celda(int x,int y){
+		this.x=x;
+		this.y=y;
+	}
+	
+	public double getX(){
+		return x;
+	}
+	
+	public double getY(){
+		return y;
+	}
+	
+	public void moverX(double x){
+		this.x+=x;
+	}
+	
+	public void moverY(double d){
+		this.y+=d;
+	}
+	
+}

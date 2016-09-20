@@ -1,0 +1,35 @@
+package Mapa;
+
+import general.Celda;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Archivo {{
+	
+	try{
+		String str= "this.getClass().getResource(mapa1.txt)";
+		File a= new File(str);
+		FileReader fr= new FileReader(a);
+		BufferedReader br= new BufferedReader(fr);
+		Celda[][] mapa;
+		
+		for(int f=0;f<17;f++)
+			for(int c=0; c<17;c++){
+				mapa[f][c]= null;
+				
+		for(int f=0;f<17;f++)
+			for(int c=0; c<17;c++){
+				mapa[f][c]= new Celda(f,c); 
+			}
+	
+	
+	}
+	catch(IOException e){
+		e.printStackTrace();
+	}
+
+
+}}

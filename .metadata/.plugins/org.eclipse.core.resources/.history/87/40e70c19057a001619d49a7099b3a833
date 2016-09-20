@@ -1,0 +1,24 @@
+package Mapa;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Archivo {
+	String str= "this.getClass().getResource(mapa1.txt)";
+	File a= new File(str);
+	try{
+			FileReader fr= new FileReader(a);
+			BufferedReader br= new BufferedReader(fr);
+	
+	
+	
+	
+	}
+	catch(IOException e){
+		e.printStackTrace();
+	}
+
+
+}

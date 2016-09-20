@@ -1,0 +1,22 @@
+package Tanque;
+import general.*;
+import Proyectil.Proyectil;
+
+public class Blindado extends Enemigo{
+	//private int contador;
+	protected final static String ruta_Blindado="Blindado_";
+	
+	public Blindado(int x,int y){
+		 super(x,y,ruta_Blindado,2);
+		 recompensa=400;
+		 velocidadMov=1;
+		 velocidadDisp=2;
+		 aguante=4;
+		// contador=0;
+	}
+	
+	public Proyectil disparar() {
+		return null;
+	}
+
+}

@@ -1,0 +1,40 @@
+package general;
+
+public class Celda {
+
+	protected double x;
+	protected double y;
+	protected String path;
+	
+	public Celda(int x,int y){
+		this.x=x;
+		this.y=y;
+		path="Vacio.png";
+	}
+	
+	public double getX(){
+		return x;
+	}
+	
+	public double getY(){
+		return y;
+	}
+	
+	public void moverX(double x){
+		this.x+=x;
+	}
+	
+	public void moverY(double d){
+		this.y+=d;
+	}
+	
+	public String getPath(){
+		return path;
+	}
+	
+	public void setPath(String ruta){
+		path=ruta;
+	}
+
+	
+}

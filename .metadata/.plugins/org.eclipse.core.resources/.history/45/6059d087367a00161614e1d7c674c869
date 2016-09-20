@@ -1,0 +1,15 @@
+package Obstaculo;
+
+import general.Celda;
+
+public class Vacio {
+	private Celda ubicacion;
+	private final String ruta="Vacio.png";
+	
+	public Vacio(){
+		
+	ubicacion.setPath(ruta);
+		
+	}
+
+}

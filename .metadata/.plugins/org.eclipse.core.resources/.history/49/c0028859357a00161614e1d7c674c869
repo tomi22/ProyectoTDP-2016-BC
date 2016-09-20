@@ -1,0 +1,30 @@
+package Tanque;
+
+import Proyectil.Proyectil;
+import general.Celda;
+
+public class Basico extends Enemigo {
+	protected final String ruta="E_Basico.png";
+
+	public Basico(Celda u)
+	{
+		 recompensa=100;
+		 velocidadMov=1;
+		 velocidadDisp=1;
+		 ubicacion=u;
+		 aguante=1;
+	}
+	
+	public Proyectil disparar() {
+		return null;
+	}
+
+	public Celda getUbicacion() {
+		return ubicacion;
+	}
+
+	public void setGrafico() {
+		ubicacion.setPath(ruta);
+	}
+
+}

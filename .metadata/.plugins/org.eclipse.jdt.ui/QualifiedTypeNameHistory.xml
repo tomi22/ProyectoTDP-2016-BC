@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="Aplicacion.GUI"/>
+<fullyQualifiedTypeName name="general.Partida"/>
+<fullyQualifiedTypeName name="Tanque.Tanque"/>
+<fullyQualifiedTypeName name="Tanque.Blindado"/>
+<fullyQualifiedTypeName name="java.awt.event.KeyListener"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="general.Celda"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="Obstaculo.Agua"/>
+<fullyQualifiedTypeName name="Obstaculo.Ladrillo"/>
+<fullyQualifiedTypeName name="Obstaculo.Cemento"/>
+<fullyQualifiedTypeName name="Tanque.Basico"/>
+<fullyQualifiedTypeName name="Obstaculo.Aguila"/>
+<fullyQualifiedTypeName name="Tanque.Rapido"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="general.ObjGrafico"/>
+<fullyQualifiedTypeName name="Obstaculo.Vacio"/>
+</qualifiedTypeNameHistroy>

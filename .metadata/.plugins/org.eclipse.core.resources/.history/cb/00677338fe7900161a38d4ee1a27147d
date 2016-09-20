@@ -1,0 +1,165 @@
+package Aplicacion;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Image;
+
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.Random;
+import java.awt.event.ActionEvent;
+
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+
+import general.Partida;
+
+public class GUI implements KeyListener  {
+	private static Partida partida;
+	private JFrame frame;
+	private static JLabel lblPlayer;
+	private static JLabel lblEnemigo[];
+	private static int tamanio_celda=40;
+	private static int contador=0;
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GUI window = new GUI();
+					window.frame.setVisible(true);
+					//falta fijar direccion
+					moverEnemigos();
+				}
+				 catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		
+	});
+		
+	}
+	/**
+	 * Create the application.
+	 */
+	public GUI() {
+		
+		initialize();
+		
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private static void moverEnemigos(){
+		while(true){
+			refreshGUI();
+			for(int h=0;h<4;h++){
+				Random rnd= new Random();
+				if(contador%11==0) 	{			
+					partida.getEnemigo(h).setDireccion(rnd.nextInt(3)+1);
+					partida.getEnemigo(h).mover(partida.getEnemigo(h).getDireccion());
+				}
+				else {
+					partida.getEnemigo(h).mover(partida.getEnemigo(h).getDireccion());
+					
+				}
+
+				contador++;
+			}
+	}
+	}
+	private void initialize() {
+		
+		//Creacion de Partida
+		
+		partida=new Partida();
+		
+
+		
+		//Creacion del Frame
+		
+		frame = new JFrame();
+		frame.setBounds(100, 100, 17*tamanio_celda, 17*tamanio_celda);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);	
+		frame.getContentPane().setBackground(Color.BLACK);
+		frame.addKeyListener(this);
+	    
+	    //Creacion Jugador 
+	    System.out.println(getClass());
+	    lblPlayer = new JLabel(new ImageIcon(new ImageIcon(getClass().getResource("Jugador1.png")).getImage().getScaledInstance(tamanio_celda, tamanio_celda, Image.SCALE_SMOOTH)));
+		lblPlayer.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPlayer.setBounds(200,601,tamanio_celda, tamanio_celda);
+		frame.getContentPane().add(lblPlayer);
+
+		//Creo los Enemigos a partir del arreglo
+		
+		lblEnemigo = new JLabel[16];
+		
+		for(int i=0;i<4;i++){
+			lblEnemigo[i] = new JLabel(new ImageIcon(new ImageIcon(getClass().getResource("Jugador1.png")).getImage().getScaledInstance(tamanio_celda, tamanio_celda, Image.SCALE_SMOOTH)));
+			lblEnemigo[i].setHorizontalAlignment(SwingConstants.CENTER);
+			lblEnemigo[i].setBounds((int)(tamanio_celda*(partida.getEnemigo(i).getUbicacion().getX())),(int) (tamanio_celda*(partida.getEnemigo(i).getUbicacion().getY())),tamanio_celda, tamanio_celda);
+			frame.getContentPane().add(lblEnemigo[i]);
+		}
+		
+		
+		
+	}
+
+	//Oyente Teclado
+	
+	public static void refreshGUI(){
+		for(int i=0;i<4;i++)
+			lblEnemigo[i].setBounds((int)(tamanio_celda*(partida.getEnemigo(i).getUbicacion().getX())),(int) (tamanio_celda*(partida.getEnemigo(i).getUbicacion().getY())),tamanio_celda, tamanio_celda);
+		
+		lblPlayer.setBounds((int) (tamanio_celda*(partida.getJugador().getUbicacion().getX())),(int) (tamanio_celda*(partida.getJugador().getUbicacion().getY())),tamanio_celda, tamanio_celda);
+	}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		
+		
+		switch(e.getKeyCode()){
+		case (KeyEvent.VK_UP):{ 
+			partida.getJugador().mover(1); 
+			break;
+			}
+		case (KeyEvent.VK_DOWN):{
+			partida.getJugador().mover(2);
+			break;
+			}
+		case (KeyEvent.VK_RIGHT):{
+			partida.getJugador().mover(3);
+			break;
+			}
+		case (KeyEvent.VK_LEFT):{
+			partida.getJugador().mover(4);
+			break;
+			}
+		 
+		}
+		refreshGUI();
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}

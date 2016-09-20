@@ -1,0 +1,17 @@
+package Obstaculo;
+
+import general.Celda;
+
+public class Bosque {
+	private Celda ubicacion;
+	private final String ruta="Bosque.png";
+	
+	public Bosque(){
+		
+	ubicacion.setPath(ruta);
+		
+	}
+	
+	
+	
+}

@@ -1,0 +1,13 @@
+package Mapa;
+
+import java.io.File;
+
+public class Archivo {
+	File a= new File(this.getClass().getResource("mapa1.txt"));
+	File Reader
+
+
+
+
+
+}

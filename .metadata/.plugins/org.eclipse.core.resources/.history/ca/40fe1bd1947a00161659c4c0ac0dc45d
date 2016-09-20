@@ -1,0 +1,12 @@
+package Obstaculo;
+
+import general.Celda;
+
+public class Aguila extends Celda{
+	private static final String ruta="Aguila.png";
+	
+	public Aguila(int x,int y){
+		super(x,y,ruta);
+	}
+	
+}
